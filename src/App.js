@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:5000'; // Update with your backend URL
+  axios.defaults.baseURL = 'https://keywordsearchappi.onrender.com/'; // Update with your backend URL
 
   const [input, setInput] = useState('');
   const [median, setMedian] = useState(null);
@@ -11,7 +11,7 @@ function App() {
   const calculateMedian = async () => {
     try {
       setLoading(true); // Set loading to true when the request is initiated
-      const response = await axios.get(`http://localhost:5000/api/calculate-median/${input}`);
+      const response = await axios.get(`https://keywordsearchappi.onrender.com/api/calculate-median/${input}`);
       setMedian(response.data.median);
     } catch (error) {
       console.error('Error calculating median:', error);
